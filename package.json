@@ -1,6 +1,9 @@
 {
   "name": "cuisinebookserver",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.16.0"
+  },
   "description": "api call",
   "main": "server.js",
   "scripts": {
