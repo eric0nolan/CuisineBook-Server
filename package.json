@@ -1,0 +1,35 @@
+{
+  "name": "cuisinebookserver",
+  "version": "1.0.0",
+  "description": "api call",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "nodemon --exec babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric0nolan/CuisineBook-Server.git"
+  },
+  "author": "Eric Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eric0nolan/CuisineBook-Server/issues"
+  },
+  "homepage": "https://github.com/eric0nolan/CuisineBook-Server#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.6"
+  }
+}
