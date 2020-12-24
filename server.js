@@ -5,6 +5,8 @@ import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
 
+const auth = require('./src/auth/auth')
+
 const apiServer = async () => {
   const app = express();
   const server = http.createServer(app);
@@ -21,6 +23,7 @@ const apiServer = async () => {
   app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
   
   app.use('/', require('./src/routes/basic'));
+  auth(app)
   
   // set static path
   app.use(express.static(path.join(__dirname, '')));
