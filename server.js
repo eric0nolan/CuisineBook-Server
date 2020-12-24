@@ -17,10 +17,11 @@ const apiServer = async () => {
   server.listen(port, () => {
     console.log('listening on *:' + port);
   });
-  
+
   // Routing
   app.use(bodyParser.json({limit: '10mb'}));
   app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+  
   app.use('/', require('./src/routes/basic'));
   auth(app)
   
