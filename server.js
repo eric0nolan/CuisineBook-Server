@@ -1,11 +1,9 @@
 import express from 'express';
 import path from 'path';
 import http from 'http';
-import bodyParser from 'body-parser'
-import dotenv from 'dotenv'
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-
-const auth = require('./src/auth/auth')
 
 const apiServer = async () => {
   const app = express();
@@ -18,13 +16,16 @@ const apiServer = async () => {
     console.log('listening on *:' + port);
   });
 
-  // Routing
+  // body parser
   app.use(bodyParser.json({limit: '10mb'}));
   app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
   
-  app.use('/', require('./src/routes/basic'));
-  auth(app)
-  
+  // Routing
+  const auth = require('./src/routes/auth');
+  const basic = require('./src/routes/basic');
+  auth(app);
+  basic(app);
+
   // set static path
   app.use(express.static(path.join(__dirname, '')));
 } 
